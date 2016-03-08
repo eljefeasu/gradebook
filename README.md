@@ -16,7 +16,7 @@ I believe this assignment will take 12 hours (between two days)
 * [x] Visitors who have not logged in should see the login page
 * [x] Allow teachers to log in/out
 * [x] Allow teachers to manage all teachers
-* [ ] Allow teachers to manage all students
+* [x] Allow teachers to manage all students
 * [ ] Allow teachers to manage grades for all students
 
 ##### Day Two Tasks

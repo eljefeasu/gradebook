@@ -19,18 +19,20 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :teacher_id %><br>
-    <%= f.number_field :teacher_id %>
+  <dv class="field">
+    <%= f.select :teacher_id, options_from_collection_for_select(Teacher.all, :id, :name), prompt: "Select Teacher Name" %><br>
+  </div>
+  <dv class="field">
+    <%= f.select :parent_id, options_from_collection_for_select(Parent.all, :id, :name), prompt: "Select Parent Name" %><br>
   </div>
   <div class="field">
-    <%= f.label :parent_id %><br>
-    <%= f.number_field :parent_id %>
+    <%= f.label "Change Password" %><br>
+    <%= f.password_field :password %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :password_digest %><br>
     <%= f.text_field :password_digest %>
-  </div>
+  </div> -->
   <div class="actions">
     <%= f.submit %>
   </div>
