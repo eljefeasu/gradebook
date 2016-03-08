@@ -1,2 +1,13 @@
-<h1>Authenticate#login</h1>
-<p>Find me in app/views/authenticate/login.html.erb</p>
+<h1>Enter Login Information:</h1>
+
+<%= form_tag(authenticate_login_path) do %>
+
+  <%= label_tag :email %>
+  <%= email_field_tag "email" %><br>
+
+  <%= label_tag :password %>
+  <%= password_field_tag "password" %><br>
+
+  <p><%= submit_tag "Submit" %></p>
+
+<% end %>

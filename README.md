@@ -13,8 +13,8 @@ I believe this assignment will take 12 hours (between two days)
 * [x] Build data structure/models/migrations for parents
 * [x] Build data structure/models/migrations for grades
 * [x] Generate controller Authenticate for login/logout
-* [ ] Visitors who have not logged in should see the login page
-* [ ] Allow teachers to log in/out
+* [x] Visitors who have not logged in should see the login page
+* [x] Allow teachers to log in/out
 * [ ] Allow teachers to create teachers
 * [ ] Allow teachers to create students
 * [ ] Allow teachers to manage grades for all students

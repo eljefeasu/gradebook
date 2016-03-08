@@ -1,4 +1,5 @@
 class GradesController < ApplicationController
+  before_action :authenticate
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
   # GET /grades

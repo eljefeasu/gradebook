@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'authenticate#login'
 
   get 'authenticate/login'
+  post 'authenticate/login'
   get 'authenticate/logout'
 
   resources :grades
