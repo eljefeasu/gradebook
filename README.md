@@ -4,14 +4,14 @@ An application that can be used to track student's grades.
 
 ### Estimate
 
-I believe this assignment will take 12 hours today (between two days)
+I believe this assignment will take 12 hours (between two days)
 
 ##### Day One Tasks
 
-* [ ] Build data structure/models/migrations for teachers
-* [ ] Build data structure/models/migrations for students
-* [ ] Build data structure/models/migrations for parents
-* [ ] Build data structure/models/migrations for grades
+* [x] Build data structure/models/migrations for teachers
+* [x] Build data structure/models/migrations for students
+* [x] Build data structure/models/migrations for parents
+* [x] Build data structure/models/migrations for grades
 * [ ] Visitors who have not logged in should see the login page
 * [ ] Allow teachers to log in/out
 * [ ] Allow teachers to create teachers
