@@ -2,6 +2,10 @@ class TeachersController < ApplicationController
   before_action :authenticate
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
+  def dashboard
+
+  end
+
   # GET /teachers
   # GET /teachers.json
   def index
@@ -70,6 +74,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :email, :password_digest)
+      params.require(:teacher).permit(:name, :email, :password_digest, :password)
     end
 end

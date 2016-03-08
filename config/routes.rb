@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'authenticate/login'
   get 'authenticate/logout'
 
+  get 'teachers/dashboard'
+
   resources :grades
   resources :parents
   resources :students

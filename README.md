@@ -15,8 +15,8 @@ I believe this assignment will take 12 hours (between two days)
 * [x] Generate controller Authenticate for login/logout
 * [x] Visitors who have not logged in should see the login page
 * [x] Allow teachers to log in/out
-* [ ] Allow teachers to create teachers
-* [ ] Allow teachers to create students
+* [x] Allow teachers to manage all teachers
+* [ ] Allow teachers to manage all students
 * [ ] Allow teachers to manage grades for all students
 
 ##### Day Two Tasks
