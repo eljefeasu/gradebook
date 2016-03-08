@@ -17,7 +17,7 @@ I believe this assignment will take 12 hours (between two days)
 * [x] Allow teachers to log in/out
 * [x] Allow teachers to manage all teachers
 * [x] Allow teachers to manage all students
-* [ ] Allow teachers to manage grades for all students
+* [x] Allow teachers to manage grades for all students
 
 ##### Day Two Tasks
 
