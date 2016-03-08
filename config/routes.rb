@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'authenticate#login'
+
+  get 'authenticate/login'
+  get 'authenticate/logout'
+
   resources :grades
   resources :parents
   resources :students
