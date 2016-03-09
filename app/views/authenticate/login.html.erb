@@ -8,6 +8,13 @@
   <%= label_tag :password %>
   <%= password_field_tag "password" %><br>
 
+  <%= label_tag :user, 'Teacher' %>
+  <%= radio_button_tag :user, 'Teacher', value: 'Teacher', checked: true %>
+  <%= label_tag :user, 'Student' %>
+  <%= radio_button_tag :user, 'Student', value: 'Student' %>
+  <%= label_tag :user, 'Parent' %>
+  <%= radio_button_tag :user, 'Parent', value: 'Parent' %>
+
   <p><%= submit_tag "Submit" %></p>
 
 <% end %>

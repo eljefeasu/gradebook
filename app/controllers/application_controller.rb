@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   private def authenticate
-    if session[:teacher_id].nil?
-      redirect_to authenticate_login_path, notice: "Must be logged in to view that page"
-    end
+    redirect_to authenticate_login_path, notice: "You must be logged in to access this page." unless session[:user_id]
   end
 end

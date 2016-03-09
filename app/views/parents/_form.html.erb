@@ -20,12 +20,10 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br>
-    <%= f.text_field :password_digest %>
-  </div>
+    <%= f.label "Set Password" %><br>
+    <%= f.password_field :password %>
   <div class="field">
-    <%= f.label :student_id %><br>
-    <%= f.number_field :student_id %>
+    <%= f.collection_select :student_id, Student.all, :id, :name, prompt: "Select Student Name" %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
