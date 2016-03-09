@@ -1,6 +1,30 @@
+<% if request.post? %>
+  <% t = Teacher.find_by(session[:user_id]) %>
+  <% if t && t.authenticate(params["Old Password"]) %>
+    <% t.update!(password: params["New Password"]) %>
+    <p id="notice">Password sucessfully changed</p>
+  <% else %>
+    <p id="notice">Password incorrect, please try again</p>
+  <% end %>
+<% end %>
+
 <h1>Teacher Dashboard</h1>
 
 <%= link_to 'Manage Teachers', teachers_path %> <br>
 <%= link_to 'Manage Students', students_path %> <br>
 <%= link_to 'Manage Parents', parents_path %> <br><br>
+
+<p><strong>Change Password</strong></p>
+<%= form_tag(teachers_dashboard_path) do %>
+
+  <%= label_tag "Old Password" %>
+  <%= password_field_tag "Old Password" %><br>
+
+  <%= label_tag "New Password" %>
+  <%= password_field_tag "New Password" %><br>
+
+  <p><%= submit_tag "Submit" %></p>
+
+<% end %>
+
 <%= link_to 'Logout', authenticate_logout_path %>

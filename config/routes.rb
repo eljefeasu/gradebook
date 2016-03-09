@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   get 'authenticate/dashboard'
 
   get 'teachers/dashboard'
+  post 'teachers/dashboard'
   get 'students/dashboard'
+  post 'students/dashboard'
   get 'parents/dashboard'
+  post 'parents/dashboard'
 
   resources :grades
   resources :parents

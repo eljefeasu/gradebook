@@ -1,4 +1,28 @@
+<% if request.post? %>
+  <% s = Student.find_by(session[:user_id]) %>
+  <% if s && s.authenticate(params["Old Password"]) %>
+    <% s.update!(password: params["New Password"]) %>
+    <p id="notice">Password sucessfully changed</p>
+  <% else %>
+    <p id="notice">Password incorrect, please try again</p>
+  <% end %>
+<% end %>
+
 <h1>Student Dashboard</h1>
 
 <%= link_to 'View Grades', grades_path %> <br><br>
+
+<p><strong>Change Password</strong></p>
+<%= form_tag(students_dashboard_path) do %>
+
+  <%= label_tag "Old Password" %>
+  <%= password_field_tag "Old Password" %><br>
+
+  <%= label_tag "New Password" %>
+  <%= password_field_tag "New Password" %><br>
+
+  <p><%= submit_tag "Submit" %></p>
+
+<% end %>
+
 <%= link_to 'Logout', authenticate_logout_path %>
