@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   private def authenticate
     redirect_to authenticate_login_path, notice: "You must be logged in to access this page." unless session[:user_id]
   end
+
+  private def authenticate_teacher
+    redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+  end
 end

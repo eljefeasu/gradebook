@@ -26,7 +26,8 @@ class AuthenticateController < ApplicationController
   end
 
   def logout
-    session[:teacher_id] = nil
+    session[:user_id] = nil
+    session[:user_type] = nil
     redirect_to authenticate_login_path, notice: "Logout succesful"
   end
 end

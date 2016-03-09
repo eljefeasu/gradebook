@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.where("#{session[:user_type].downcase}_id" => session[:user_id])
   end
 
   # GET /students/1
@@ -66,6 +66,9 @@ class StudentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_student
       @student = Student.find(params[:id])
+      unless @student.teacher_id == session[:user_id]
+        redirect_to :back
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

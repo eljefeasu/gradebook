@@ -21,7 +21,7 @@ I believe this assignment will take 12 hours (between two days)
 
 ##### Day Two Tasks
 
-* [ ] Enter/manage information about parents
-* [ ] Allow students to log in/out
-* [ ] Allow parents to log in/out
-* [ ] Limit teachers to only view/edit their own students and student grades
+* [x] Enter/manage information about parents
+* [x] Allow students to log in/out
+* [x] Allow parents to log in/out
+* [x] Limit teachers to only view/edit their own students and student grades
