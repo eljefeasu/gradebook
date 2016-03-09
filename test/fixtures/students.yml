@@ -5,7 +5,7 @@ one:
   email: MyString
   teacher_id: 1
   parent_id: 1
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create("password") %>
 
 two:
   name: MyString

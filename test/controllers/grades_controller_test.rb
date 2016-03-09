@@ -3,6 +3,9 @@ require 'test_helper'
 class GradesControllerTest < ActionController::TestCase
   setup do
     @grade = grades(:one)
+    @teacher = teachers(:one)
+    session[:user_id] = @teacher.id
+    session[:user_type] = "Teacher"
   end
 
   test "should get index" do

@@ -77,7 +77,11 @@ class GradesController < ApplicationController
     def set_grade
       @grade = Grade.find(params[:id])
       unless @grade.student.teacher_id == session[:user_id] && session[:user_type] == "Teacher"
-        redirect_to :back, notice: "You are not authorized to access that page."
+        begin
+          redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+        rescue ActionController::RedirectBackError
+          redirect_to root_path, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+        end
       end
     end
 

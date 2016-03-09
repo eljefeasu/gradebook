@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   end
 
   private def authenticate_teacher
-    redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+    begin
+      redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+    rescue ActionController::RedirectBackError
+      redirect_to root_path, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+    end
   end
 end

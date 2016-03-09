@@ -3,6 +3,9 @@ require 'test_helper'
 class StudentsControllerTest < ActionController::TestCase
   setup do
     @student = students(:one)
+    @teacher = teachers(:one)
+    session[:user_id] = @teacher.id
+    session[:user_type] = "Teacher"
   end
 
   test "should get index" do
@@ -26,7 +29,7 @@ class StudentsControllerTest < ActionController::TestCase
 
   test "should show student" do
     get :show, id: @student
-    assert_response :success
+    assert_raises :success
   end
 
   test "should get edit" do

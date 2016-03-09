@@ -68,7 +68,11 @@ class StudentsController < ApplicationController
     def set_student
       @student = Student.find(params[:id])
       unless @student.teacher_id == session[:user_id]
-        redirect_to :back
+        begin
+          redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+        rescue ActionController::RedirectBackError
+          redirect_to root_path, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
+        end
       end
     end
 
