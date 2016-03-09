@@ -15,7 +15,7 @@
       <tr>
         <td><%= parent.name %></td>
         <td><%= parent.email %></td>
-        <td><%= parent.student_id %></td>
+        <td><%= parent.student.name %></td>
         <td><%= link_to 'Show', parent %></td>
         <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
         <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>

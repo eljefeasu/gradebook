@@ -26,3 +26,4 @@ I believe this assignment will take 12 hours (between two days)
 * [x] Allow parents to log in/out
 * [x] Limit teachers to only view/edit their own students and student grades
 * [x] Students can only view their grades
+* [x] Parents can only view their student's grades
