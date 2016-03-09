@@ -6,7 +6,14 @@ class GradesController < ApplicationController
   # GET /grades
   # GET /grades.json
   def index
-    @grades = Grade.where(student_id: session[:user_id])
+    if session[:user_type] == "Student"
+      @grades = Grade.where(student_id: session[:user_id])
+    elsif session[:user_type] == "Teacher"
+      @grades = Grade.where(student_id: params[:student_id])
+    elsif session[:user_type] == "Parent"
+      parent = Parent.find(session[:user_id])
+      @grades = Grade.where(student_id: parent.student_id)
+    end
   end
 
   # GET /grades/1
