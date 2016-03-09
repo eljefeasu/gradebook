@@ -1,11 +1,12 @@
 class GradesController < ApplicationController
   before_action :authenticate
+  before_action :authenticate_teacher, only: [:new]
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
   # GET /grades
   # GET /grades.json
   def index
-    @grades = Grade.all
+    @grades = Grade.where(student_id: session[:user_id])
   end
 
   # GET /grades/1
@@ -16,6 +17,7 @@ class GradesController < ApplicationController
   # GET /grades/new
   def new
     @grade = Grade.new
+    @student_id = params[:student_id]
   end
 
   # GET /grades/1/edit
@@ -29,7 +31,8 @@ class GradesController < ApplicationController
 
     respond_to do |format|
       if @grade.save
-        format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
+        blow up
+        format.html { redirect_to grades_path, notice: 'Grade was successfully created.' }
         format.json { render :show, status: :created, location: @grade }
       else
         format.html { render :new }
@@ -66,6 +69,9 @@ class GradesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_grade
       @grade = Grade.find(params[:id])
+      unless @grade.student.teacher_id == session[:user_id] && session[:user_type] == "Teacher"
+        redirect_to :back, notice: "You are not authorized to access that page."
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

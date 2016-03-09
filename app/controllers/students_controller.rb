@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :authenticate
+  before_action :authenticate_teacher, except: [:dashboard]
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students
