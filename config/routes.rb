@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'authenticate#login'
+  root 'authenticate#dashboard'
 
   get 'authenticate/login'
   post 'authenticate/login'
   get 'authenticate/logout'
+  get 'authenticate/dashboard'
 
   get 'teachers/dashboard'
 

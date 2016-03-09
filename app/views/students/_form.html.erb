@@ -20,10 +20,10 @@
     <%= f.text_field :email %>
   </div>
   <dv class="field">
-    <%= f.select :teacher_id, options_from_collection_for_select(Teacher.all, :id, :name), prompt: "Select Teacher Name" %><br>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name, prompt: "Select Teacher Name" %><br>
   </div>
   <dv class="field">
-    <%= f.select :parent_id, options_from_collection_for_select(Parent.all, :id, :name), prompt: "Select Parent Name" %><br>
+    <%= f.collection_select :parent_id, Parent.all, :id, :name, prompt: "Select Parent Name" %><br>
   </div>
   <div class="field">
     <%= f.label "Change Password" %><br>
