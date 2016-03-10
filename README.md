@@ -6,7 +6,7 @@ An application that can be used to track student's grades.
 
 I believe this assignment will take 12 hours (between two days)
 
-*I worked on this assignment for a combined total of 11.5 hours and did quite finish. Couldn't figure out testing*
+*I worked on this assignment for a combined total of 11.5 hours and didn't quite finish. Couldn't figure out testing*
 
 ##### Day One Tasks
 
