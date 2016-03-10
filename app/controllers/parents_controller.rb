@@ -2,6 +2,7 @@ class ParentsController < ApplicationController
   before_action :authenticate
   before_action :authenticate_teacher, except: [:dashboard]
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_parent, only: [:dashboard]
 
   # GET /parents
   # GET /parents.json

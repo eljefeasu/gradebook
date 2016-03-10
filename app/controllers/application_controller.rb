@@ -14,4 +14,20 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
     end
   end
+
+  private def authenticate_student
+    begin
+      redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Student"
+    rescue ActionController::RedirectBackError
+      redirect_to root_path, notice: "You do not have permission to access that page." unless session[:user_type] == "Student"
+    end
+  end
+
+  private def authenticate_parent
+    begin
+      redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Parent"
+    rescue ActionController::RedirectBackError
+      redirect_to root_path, notice: "You do not have permission to access that page." unless session[:user_type] == "Parent"
+    end
+  end
 end
